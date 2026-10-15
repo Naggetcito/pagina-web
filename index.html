@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MISTIK | Un refugio para compartir, disfrutar y reconectar</title>
+  <meta name="description" content="MISTIK, restaurante en Lima. Fondos, burgers, alitas, waffles y cócteles, y los makis de Auraki Roll. Lunes a domingo de 4:00 pm a 11:30 pm.">
+  <meta name="theme-color" content="#7C3A24">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="flecha" viewBox="0 0 24 24">
+      <path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="bolsa" viewBox="0 0 24 24">
+      <path d="M5 8h14l-1.2 12H6.2L5 8Zm4 0V6.5a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pin" viewBox="0 0 24 24">
+      <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="rayos" viewBox="-450 -450 900 900">
+      <g fill="none" stroke="currentColor">
+        <circle r="330" stroke-width="220" stroke-dasharray="5 38.2"/>
+        <circle r="190" stroke-width="50" stroke-dasharray="3.5 21.37" stroke-dashoffset="12.4"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <header class="topbar" id="topbar">
+    <div class="wrap">
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__marca" href="#inicio" aria-label="MISTIK, inicio">
+          <img src="img/emblema-mistik.png" alt="" width="700" height="370">
+          <span>MISTIK</span>
+        </a>
+        <div class="nav__links">
+          <a href="carta.html">Carta</a>
+          <a href="#visita">Visita</a>
+          <a href="#contacto">Contacto</a>
+          <a class="btn btn--crema nav__rappi" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═════════ HERO ═════════ -->
+    <section class="hero" id="inicio" aria-label="MISTIK">
+      <div class="wrap hero__cuerpo">
+        <div class="hero__logo">
+          <svg class="sol-giratorio" viewBox="0 0 900 900" aria-hidden="true"><use href="#rayos" width="900" height="900"/></svg>
+          <h1><img src="img/logo-mistik.png" alt="MISTIK" width="1020" height="640"></h1>
+        </div>
+
+        <p class="hero__tagline">Un refugio para compartir, disfrutar y reconectar</p>
+        <p class="hero__propuesta">Fondos, burgers, alitas, waffles y cócteles. Y los makis de <b>Auraki Roll</b>, servidos en MISTIK.</p>
+
+        <div class="horario-chip">
+          <span class="horario-chip__dias">Lun a Dom</span>
+          <span class="horario-chip__horas">4:00 pm a 11:30 pm</span>
+        </div>
+        <p class="estado" id="estado" aria-live="polite">
+          <span class="estado__punto" aria-hidden="true"></span>
+          <span id="estado-texto"></span>
+        </p>
+
+        <div class="hero__acciones" id="hero-acciones">
+          <a class="btn btn--crema" href="carta.html">
+            Ver carta
+            <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+          </a>
+          <a class="btn btn--borde" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+            <svg aria-hidden="true"><use href="#bolsa"/></svg>
+            Pedir en Rappi
+          </a>
+          <a class="btn btn--texto" href="#visita">Cómo llegar</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cinta en bucle: dos grupos idénticos, cada uno más ancho que la pantalla -->
+    <div class="cinta" aria-hidden="true">
+      <div class="cinta__pista">
+        <div class="cinta__grupo">
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+        </div>
+        <div class="cinta__grupo">
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+          <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═════════ INVITACIÓN A LA CARTA ═════════ -->
+    <section class="invita" aria-labelledby="invita-titulo">
+      <div class="wrap invita__grid">
+        <div class="invita__texto reveal">
+          <p class="eyebrow">La carta</p>
+          <h2 class="h2" id="invita-titulo">Mucho para elegir, mejor en su propia página</h2>
+          <p>Más de 150 opciones entre platos, alitas, dulces y bebidas, con sus precios. Aquí van algunas para abrir el apetito.</p>
+          <a class="btn btn--terracota" href="carta.html">
+            Abrir la carta
+            <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+          </a>
+          <p class="invita__tambien">También:
+            <a href="carta.html#entradas">entradas</a>, <a href="carta.html#caldos">caldos</a>, <a href="carta.html#ensaladas">ensaladas</a>, <a href="carta.html#sandwiches">sándwiches</a>, <a href="carta.html#salchipapas">salchipapas</a>, <a href="carta.html#piqueos">piqueos</a>, <a href="carta.html#postres">postres</a>, <a href="carta.html#jugos">jugos</a> y <a href="carta.html#cafe">café</a>.
+          </p>
+        </div>
+
+        <div class="destacados">
+          <a class="destacado reveal" href="carta.html#fondo">
+            <span class="destacado__cat">Fondos</span>
+            <span class="destacado__desc">Lomo saltado, mostrito crunch y bisteck a lo pobre</span>
+            <span class="destacado__pie">
+              <span class="destacado__precio"><small>desde</small>S/ 10</span>
+              <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+            </span>
+          </a>
+          <a class="destacado destacado--oscuro reveal" style="--d:.08s" href="carta.html#alitas">
+            <span class="destacado__cat">Alitas</span>
+            <span class="destacado__desc">12 sabores, de BBQ a mango habanero</span>
+            <span class="destacado__pie">
+              <span class="destacado__precio"><small>6 unidades</small>S/ 23</span>
+              <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+            </span>
+          </a>
+          <a class="destacado reveal" style="--d:.16s" href="carta.html#burgers">
+            <span class="destacado__cat">Burgers</span>
+            <span class="destacado__desc">Pan brioche y hamburguesa casera</span>
+            <span class="destacado__pie">
+              <span class="destacado__precio"><small>desde</small>S/ 15</span>
+              <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+            </span>
+          </a>
+          <a class="destacado reveal" style="--d:.24s" href="carta.html#cocteles">
+            <span class="destacado__cat">Cócteles</span>
+            <span class="destacado__desc">Pisco sour, mojito, margaritas y más</span>
+            <span class="destacado__pie">
+              <span class="destacado__precio"><small>desde</small>S/ 13</span>
+              <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ DELIVERY ═════════ -->
+    <section class="delivery" aria-labelledby="delivery-titulo">
+      <svg class="sol-giratorio" viewBox="0 0 900 900" aria-hidden="true"><use href="#rayos" width="900" height="900"/></svg>
+      <div class="wrap delivery__fila">
+        <div class="reveal">
+          <p class="eyebrow">Delivery</p>
+          <h2 class="h2" id="delivery-titulo">¿Hoy toca en casa? Pide MISTIK por Rappi</h2>
+          <p>La misma carta, directo a tu puerta.</p>
+        </div>
+        <a class="btn btn--crema reveal" style="--d:.1s" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#bolsa"/></svg>
+          Pedir en Rappi
+          <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═════════ VISITA ═════════ -->
+    <section class="visita" id="visita" aria-labelledby="visita-titulo">
+      <div class="wrap visita__grid">
+        <div class="reveal">
+          <p class="eyebrow">Visita</p>
+          <h2 class="h2" id="visita-titulo">Ven a MISTIK</h2>
+
+          <dl class="visita__datos">
+            <div class="dato">
+              <dt>Dirección</dt>
+              <dd>Av. Germán Aguirre 564,<br>Lima, Perú 15103</dd>
+            </div>
+            <div class="dato">
+              <dt>Horario</dt>
+              <dd>Lunes a domingo<br>4:00 pm a 11:30 pm</dd>
+            </div>
+          </dl>
+
+          <div class="visita__acciones">
+            <a class="btn btn--terracota" href="https://www.google.com/maps/place/Av.+Germ%C3%A1n+Aguirre+564,+San+Mart%C3%ADn+de+Porres+15103/data=!4m2!3m1!1s0x9105ceeed804b34b:0xd57b76acea88cf4c?sa=X&amp;ved=1t:242&amp;ictx=111" target="_blank" rel="noopener noreferrer">
+              <svg aria-hidden="true"><use href="#pin"/></svg>
+              Abrir en Google Maps
+            </a>
+          </div>
+        </div>
+
+        <div class="mapa reveal" style="--d:.12s">
+          <iframe
+            title="Mapa: MISTIK, Av. Germán Aguirre 564, Lima"
+            src="https://www.google.com/maps?q=Av.+Germ%C3%A1n+Aguirre+564,+San+Mart%C3%ADn+de+Porres+15103&amp;hl=es&amp;z=16&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ CONTACTO ═════════ -->
+    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="wrap">
+        <div class="contacto__cab reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2 class="h2" id="contacto-titulo">Síguenos y escríbenos</h2>
+          <p>Novedades y el día a día de MISTIK están en nuestras redes.</p>
+        </div>
+
+        <div class="redes">
+          <a class="red reveal" href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="red__plataforma">Instagram</span>
+              <span class="red__usuario">@mistikrestaurante</span>
+            </span>
+            <svg aria-hidden="true"><use href="#flecha"/></svg>
+          </a>
+
+          <a class="red reveal" style="--d:.08s" href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="red__plataforma">TikTok</span>
+              <span class="red__usuario">@mistikrestaurante</span>
+            </span>
+            <svg aria-hidden="true"><use href="#flecha"/></svg>
+          </a>
+
+          <a class="red red--rappi reveal" style="--d:.16s" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+            <span>
+              <span class="red__plataforma">Delivery en Rappi</span>
+              <span class="red__usuario">MISTIK Restaurante</span>
+            </span>
+            <svg aria-hidden="true"><use href="#flecha"/></svg>
+          </a>
+        </div>
+
+        <p class="contacto__nota reveal">Los makis que se sirven en MISTIK son de Auraki Roll (@auraki_roll), otro restaurante que nos los provee.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="wrap">
+      <div class="pie__grid">
+        <div>
+          <img class="pie__logo" src="img/logo-mistik.png" alt="MISTIK" width="1020" height="640">
+          <p class="pie__lema">Un refugio para compartir, disfrutar y reconectar</p>
+        </div>
+        <div>
+          <p class="pie__tit">Visítanos</p>
+          <ul class="pie__lista">
+            <li>Av. Germán Aguirre 564, Lima, Perú 15103</li>
+            <li>Lunes a domingo, 4:00 pm a 11:30 pm</li>
+          </ul>
+        </div>
+        <div>
+          <p class="pie__tit">Enlaces</p>
+          <ul class="pie__lista">
+            <li><a href="carta.html">La carta</a></li>
+            <li><a href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a></li>
+            <li><a href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pie__base">
+        <span>MISTIK, Lima</span>
+        <span class="pie__version">Prototipo v0.1</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Accesos rápidos en celular -->
+  <nav class="barra-movil" id="barra-movil" data-ocultable aria-label="Accesos rápidos">
+    <a class="btn btn--borde" href="carta.html">Ver carta</a>
+    <a class="btn btn--dorado" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true"><use href="#bolsa"/></svg>
+      Pedir en Rappi
+    </a>
+  </nav>
+
+  <script src="main.js"></script>
+</body>
+</html>
