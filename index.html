@@ -10,10 +10,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="NO-TOCAR/styles.css">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 
+<!--
+  PAGINA DE INICIO DE MISTIK
+
+  Para cambiar enlaces, horario, direccion, textos o la posicion de los botones
+  NO hace falta editar este archivo: abre EDITAR-AQUI/ajustes.js
+  Para cambiar platos o precios: abre EDITAR-AQUI/carta.js
+-->
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="flecha" viewBox="0 0 24 24">
@@ -38,34 +45,34 @@
     <div class="wrap">
       <nav class="nav" aria-label="Principal">
         <a class="nav__marca" href="#inicio" aria-label="MISTIK, inicio">
-          <img src="img/emblema-mistik.png" alt="" width="700" height="370">
+          <img src="NO-TOCAR/img/emblema-mistik.png" alt="" width="700" height="370">
           <span>MISTIK</span>
         </a>
         <div class="nav__links">
           <a href="carta.html">Carta</a>
           <a href="#visita">Visita</a>
           <a href="#contacto">Contacto</a>
-          <a class="btn btn--crema nav__rappi" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a>
+          <a class="btn btn--crema nav__rappi" data-enlace="rappi" data-mostrar="boton rappi encabezado" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- ═════════ HERO ═════════ -->
-    <section class="hero" id="inicio" aria-label="MISTIK">
+    <!-- ===== PORTADA ===== -->
+    <section class="hero" id="inicio" data-bloque="portada" aria-label="MISTIK">
       <div class="wrap hero__cuerpo">
         <div class="hero__logo">
           <svg class="sol-giratorio" viewBox="0 0 900 900" aria-hidden="true"><use href="#rayos" width="900" height="900"/></svg>
-          <h1><img src="img/logo-mistik.png" alt="MISTIK" width="1020" height="640"></h1>
+          <h1><img src="NO-TOCAR/img/logo-mistik.png" alt="MISTIK" width="1020" height="640"></h1>
         </div>
 
-        <p class="hero__tagline">Un refugio para compartir, disfrutar y reconectar</p>
-        <p class="hero__propuesta">Fondos, burgers, alitas, waffles y cócteles. Y los makis de <b>Auraki Roll</b>, servidos en MISTIK.</p>
+        <p class="hero__tagline" data-texto="lema">Un refugio para compartir, disfrutar y reconectar</p>
+        <p class="hero__propuesta" data-texto="texto portada">Fondos, burgers, alitas, waffles y cócteles. Y los makis de <b>Auraki Roll</b>, servidos en MISTIK.</p>
 
         <div class="horario-chip">
-          <span class="horario-chip__dias">Lun a Dom</span>
-          <span class="horario-chip__horas">4:00 pm a 11:30 pm</span>
+          <span class="horario-chip__dias" data-texto="dias corto">Lun a Dom</span>
+          <span class="horario-chip__horas" data-texto="horas">4:00 pm a 11:30 pm</span>
         </div>
         <p class="estado" id="estado" aria-live="polite">
           <span class="estado__punto" aria-hidden="true"></span>
@@ -77,7 +84,7 @@
             Ver carta
             <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
           </a>
-          <a class="btn btn--borde" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+          <a class="btn btn--borde" data-enlace="rappi" data-mostrar="boton rappi portada" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">
             <svg aria-hidden="true"><use href="#bolsa"/></svg>
             Pedir en Rappi
           </a>
@@ -86,8 +93,8 @@
       </div>
     </section>
 
-    <!-- Cinta en bucle: dos grupos idénticos, cada uno más ancho que la pantalla -->
-    <div class="cinta" aria-hidden="true">
+    <!-- ===== CINTA (franja con palabras que se mueve) ===== -->
+    <div class="cinta" data-bloque="cinta" aria-hidden="true">
       <div class="cinta__pista">
         <div class="cinta__grupo">
           <span>Compartir</span><span>Disfrutar</span><span>Reconectar</span>
@@ -108,23 +115,20 @@
       </div>
     </div>
 
-    <!-- ═════════ INVITACIÓN A LA CARTA ═════════ -->
-    <section class="invita" aria-labelledby="invita-titulo">
+    <!-- ===== INVITACION A LA CARTA ===== -->
+    <section class="invita" data-bloque="carta" aria-labelledby="invita-titulo">
       <div class="wrap invita__grid">
         <div class="invita__texto reveal">
           <p class="eyebrow">La carta</p>
           <h2 class="h2" id="invita-titulo">Mucho para elegir, mejor en su propia página</h2>
-          <p>Más de 150 opciones entre platos, alitas, dulces y bebidas, con sus precios. Aquí van algunas para abrir el apetito.</p>
+          <p data-texto="texto carta">Entradas, fondos, burgers, alitas, waffles, bebidas y cócteles, con sus precios. Aquí van algunas para abrir el apetito.</p>
           <a class="btn btn--terracota" href="carta.html">
             Abrir la carta
             <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
           </a>
-          <p class="invita__tambien">También:
-            <a href="carta.html#entradas">entradas</a>, <a href="carta.html#caldos">caldos</a>, <a href="carta.html#ensaladas">ensaladas</a>, <a href="carta.html#sandwiches">sándwiches</a>, <a href="carta.html#salchipapas">salchipapas</a>, <a href="carta.html#piqueos">piqueos</a>, <a href="carta.html#postres">postres</a>, <a href="carta.html#jugos">jugos</a> y <a href="carta.html#cafe">café</a>.
-          </p>
         </div>
 
-        <div class="destacados">
+        <div class="destacados" data-tarjetas>
           <a class="destacado reveal" href="carta.html#fondo">
             <span class="destacado__cat">Fondos</span>
             <span class="destacado__desc">Lomo saltado, mostrito crunch y bisteck a lo pobre</span>
@@ -161,16 +165,16 @@
       </div>
     </section>
 
-    <!-- ═════════ DELIVERY ═════════ -->
-    <section class="delivery" aria-labelledby="delivery-titulo">
+    <!-- ===== FRANJA DE RAPPI ===== -->
+    <section class="delivery" data-bloque="rappi" aria-labelledby="delivery-titulo">
       <svg class="sol-giratorio" viewBox="0 0 900 900" aria-hidden="true"><use href="#rayos" width="900" height="900"/></svg>
       <div class="wrap delivery__fila">
         <div class="reveal">
           <p class="eyebrow">Delivery</p>
-          <h2 class="h2" id="delivery-titulo">¿Hoy toca en casa? Pide MISTIK por Rappi</h2>
-          <p>La misma carta, directo a tu puerta.</p>
+          <h2 class="h2" id="delivery-titulo" data-texto="rappi titulo">¿Hoy toca en casa? Pide MISTIK por Rappi</h2>
+          <p data-texto="rappi texto">La misma carta, directo a tu puerta.</p>
         </div>
-        <a class="btn btn--crema reveal" style="--d:.1s" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+        <a class="btn btn--crema reveal" style="--d:.1s" data-enlace="rappi" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">
           <svg aria-hidden="true"><use href="#bolsa"/></svg>
           Pedir en Rappi
           <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
@@ -178,8 +182,8 @@
       </div>
     </section>
 
-    <!-- ═════════ VISITA ═════════ -->
-    <section class="visita" id="visita" aria-labelledby="visita-titulo">
+    <!-- ===== VISITA ===== -->
+    <section class="visita" id="visita" data-bloque="visita" aria-labelledby="visita-titulo">
       <div class="wrap visita__grid">
         <div class="reveal">
           <p class="eyebrow">Visita</p>
@@ -188,16 +192,16 @@
           <dl class="visita__datos">
             <div class="dato">
               <dt>Dirección</dt>
-              <dd>Av. Germán Aguirre 564,<br>Lima, Perú 15103</dd>
+              <dd data-texto="direccion">Av. Germán Aguirre 564<br>Lima, Perú 15103</dd>
             </div>
             <div class="dato">
               <dt>Horario</dt>
-              <dd>Lunes a domingo<br>4:00 pm a 11:30 pm</dd>
+              <dd><span data-texto="dias">Lunes a domingo</span><br><span data-texto="horas">4:00 pm a 11:30 pm</span></dd>
             </div>
           </dl>
 
           <div class="visita__acciones">
-            <a class="btn btn--terracota" href="https://www.google.com/maps/place/Av.+Germ%C3%A1n+Aguirre+564,+San+Mart%C3%ADn+de+Porres+15103/data=!4m2!3m1!1s0x9105ceeed804b34b:0xd57b76acea88cf4c?sa=X&amp;ved=1t:242&amp;ictx=111" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn--terracota" data-enlace="maps" href="https://www.google.com/maps/place/Av.+Germ%C3%A1n+Aguirre+564,+San+Mart%C3%ADn+de+Porres+15103/data=!4m2!3m1!1s0x9105ceeed804b34b:0xd57b76acea88cf4c?sa=X&amp;ved=1t:242&amp;ictx=111" target="_blank" rel="noopener noreferrer">
               <svg aria-hidden="true"><use href="#pin"/></svg>
               Abrir en Google Maps
             </a>
@@ -206,7 +210,8 @@
 
         <div class="mapa reveal" style="--d:.12s">
           <iframe
-            title="Mapa: MISTIK, Av. Germán Aguirre 564, Lima"
+            data-mapa
+            title="Mapa: MISTIK, Lima"
             src="https://www.google.com/maps?q=Av.+Germ%C3%A1n+Aguirre+564,+San+Mart%C3%ADn+de+Porres+15103&amp;hl=es&amp;z=16&amp;output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -215,8 +220,24 @@
       </div>
     </section>
 
-    <!-- ═════════ CONTACTO ═════════ -->
-    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+    <!-- ===== ANEXO: AURAKI ROLL ===== -->
+    <section class="delivery" id="auraki" data-bloque="auraki" aria-labelledby="auraki-titulo">
+      <svg class="sol-giratorio" viewBox="0 0 900 900" aria-hidden="true"><use href="#rayos" width="900" height="900"/></svg>
+      <div class="wrap delivery__fila">
+        <div class="reveal">
+          <p class="eyebrow">Anexo</p>
+          <h2 class="h2" id="auraki-titulo">Makis de Auraki Roll</h2>
+          <p data-texto="auraki texto">Los makis que se sirven en MISTIK son de Auraki Roll. En su carta: makis fríos y calientes, combos, barra libre, nigiri, gyozas, alitas, yakimeshi y poke bowls.</p>
+        </div>
+        <a class="btn btn--crema reveal" style="--d:.1s" href="auraki.html">
+          Ver carta de Auraki Roll
+          <svg class="ico-flecha" aria-hidden="true"><use href="#flecha"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="contacto" id="contacto" data-bloque="contacto" aria-labelledby="contacto-titulo">
       <div class="wrap">
         <div class="contacto__cab reveal">
           <p class="eyebrow">Contacto</p>
@@ -225,23 +246,23 @@
         </div>
 
         <div class="redes">
-          <a class="red reveal" href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">
+          <a class="red reveal" data-enlace="instagram" href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">
             <span>
               <span class="red__plataforma">Instagram</span>
-              <span class="red__usuario">@mistikrestaurante</span>
+              <span class="red__usuario" data-texto="instagram usuario">@mistikrestaurante</span>
             </span>
             <svg aria-hidden="true"><use href="#flecha"/></svg>
           </a>
 
-          <a class="red reveal" style="--d:.08s" href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">
+          <a class="red reveal" style="--d:.08s" data-enlace="tiktok" href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">
             <span>
               <span class="red__plataforma">TikTok</span>
-              <span class="red__usuario">@mistikrestaurante</span>
+              <span class="red__usuario" data-texto="tiktok usuario">@mistikrestaurante</span>
             </span>
             <svg aria-hidden="true"><use href="#flecha"/></svg>
           </a>
 
-          <a class="red red--rappi reveal" style="--d:.16s" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+          <a class="red red--rappi reveal" style="--d:.16s" data-enlace="rappi" data-mostrar="boton rappi contacto" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">
             <span>
               <span class="red__plataforma">Delivery en Rappi</span>
               <span class="red__usuario">MISTIK Restaurante</span>
@@ -250,51 +271,53 @@
           </a>
         </div>
 
-        <p class="contacto__nota reveal">Los makis que se sirven en MISTIK son de Auraki Roll (@auraki_roll), otro restaurante que nos los provee.</p>
+        <p class="contacto__nota reveal">Los makis que se sirven en MISTIK son de Auraki Roll (@auraki_roll), otro restaurante que nos los provee. <a href="auraki.html">Ver su carta</a>.</p>
       </div>
     </section>
   </main>
 
+  <!-- ===== PIE DE PAGINA ===== -->
   <footer class="pie">
     <div class="wrap">
       <div class="pie__grid">
         <div>
-          <img class="pie__logo" src="img/logo-mistik.png" alt="MISTIK" width="1020" height="640">
-          <p class="pie__lema">Un refugio para compartir, disfrutar y reconectar</p>
+          <img class="pie__logo" src="NO-TOCAR/img/logo-mistik.png" alt="MISTIK" width="1020" height="640">
+          <p class="pie__lema" data-texto="lema">Un refugio para compartir, disfrutar y reconectar</p>
         </div>
         <div>
           <p class="pie__tit">Visítanos</p>
           <ul class="pie__lista">
-            <li>Av. Germán Aguirre 564, Lima, Perú 15103</li>
-            <li>Lunes a domingo, 4:00 pm a 11:30 pm</li>
+            <li data-texto="direccion" data-una-linea>Av. Germán Aguirre 564, Lima, Perú 15103</li>
+            <li><span data-texto="dias">Lunes a domingo</span>, <span data-texto="horas">4:00 pm a 11:30 pm</span></li>
           </ul>
         </div>
         <div>
           <p class="pie__tit">Enlaces</p>
           <ul class="pie__lista">
             <li><a href="carta.html">La carta</a></li>
-            <li><a href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a></li>
-            <li><a href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+            <li><a href="auraki.html">Makis de Auraki Roll</a></li>
+            <li data-mostrar="boton rappi pie"><a data-enlace="rappi" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">Pedir en Rappi</a></li>
+            <li><a data-enlace="instagram" href="https://www.instagram.com/mistikrestaurante/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a data-enlace="tiktok" href="https://www.tiktok.com/@mistikrestaurante" target="_blank" rel="noopener noreferrer">TikTok</a></li>
           </ul>
         </div>
       </div>
       <div class="pie__base">
-        <span>MISTIK, Lima</span>
-        <span class="pie__version">Prototipo v0.1</span>
+        <span>&copy; 2026 MISTIK, Lima</span>
       </div>
     </div>
   </footer>
 
-  <!-- Accesos rápidos en celular -->
+  <!-- ===== BARRA FIJA DEL CELULAR ===== -->
   <nav class="barra-movil" id="barra-movil" data-ocultable aria-label="Accesos rápidos">
     <a class="btn btn--borde" href="carta.html">Ver carta</a>
-    <a class="btn btn--dorado" href="https://www.rappi.com.pe/lima/restaurantes/delivery/75899-mistik-restaurante" target="_blank" rel="noopener noreferrer">
+    <a class="btn btn--dorado" data-enlace="rappi" data-mostrar="boton rappi celular" href="https://rappi.sng.link/Ev50a/ynhb?pcn=RX_PE_AL_OR_MU_75899_ALL_RES_RAP_ALL_NA_00000&amp;_dl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_ddl=gbrappi%3A%2F%2Fcom.grability.rappi%3Fstore_type%3Drestaurant%26brand_id%3D75899&amp;_fallback_redirect=https%3A%2F%2Frappi.com.pe%2F&amp;_force_redirect=true" target="_blank" rel="noopener noreferrer">
       <svg aria-hidden="true"><use href="#bolsa"/></svg>
       Pedir en Rappi
     </a>
   </nav>
 
-  <script src="main.js"></script>
+  <script src="EDITAR-AQUI/ajustes.js"></script>
+  <script src="NO-TOCAR/sitio.js"></script>
 </body>
 </html>

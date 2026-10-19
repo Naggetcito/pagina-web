@@ -438,6 +438,9 @@ button { font: inherit; color: inherit; }
 .delivery .h2 { max-width: 16em; }
 .delivery p:not(.eyebrow) { margin-top: .8rem; color: rgba(247, 238, 223, .85); max-width: 30em; }
 
+.delivery[id] { scroll-margin-top: calc(var(--nav-alto) + 8px); }
+.delivery p:not(.eyebrow) a { color: var(--dorado); }
+
 /* ───── Visita ───── */
 .visita { padding-block: clamp(56px, 9vw, 112px); }
 .visita__grid { display: grid; gap: clamp(28px, 5vw, 64px); align-items: stretch; }
@@ -533,6 +536,7 @@ button { font: inherit; color: inherit; }
   .red--rappi:hover { background: var(--terracota-oscuro); }
   .red:hover svg { transform: translateX(4px); }
 }
+.contacto__nota a { color: var(--terracota); font-weight: 600; text-underline-offset: 3px; }
 .contacto__nota {
   margin-top: clamp(22px, 3.4vw, 32px);
   padding-top: 1.2rem;
@@ -573,16 +577,6 @@ button { font: inherit; color: inherit; }
   padding-top: 20px;
   border-top: 1px solid rgba(247, 238, 223, .14);
   font-size: .85rem;
-}
-.pie__version {
-  display: inline-block;
-  padding: .25rem .7rem;
-  border: 1px solid rgba(201, 154, 91, .6);
-  border-radius: 999px;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  color: var(--dorado);
 }
 
 /* ───── Barra fija para celular ───── */
@@ -906,3 +900,106 @@ button { font: inherit; color: inherit; }
   .btn, .btn svg, .red, .red svg, .nav__links a, .cats__lista a, .destacado, .barra-movil { transition: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ═════════ Movimiento extra (pensado para celular; también suma en escritorio) ═════════ */
+@keyframes entra { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes entra-logo { from { opacity: 0; transform: translateY(12px) scale(.93); } to { opacity: 1; transform: none; } }
+@keyframes respira {
+  0%, 100% { opacity: .55; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+@keyframes anillo-crema {
+  0% { box-shadow: 0 0 0 0 rgba(247, 238, 223, .5); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(247, 238, 223, 0); }
+}
+@keyframes anillo-dorado {
+  0% { box-shadow: 0 0 0 0 rgba(201, 154, 91, .6); }
+  70%, 100% { box-shadow: 0 0 0 14px rgba(201, 154, 91, 0); }
+}
+@keyframes vaiven { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@keyframes brillo {
+  0% { transform: translateX(-130%) skewX(-20deg); }
+  55%, 100% { transform: translateX(330%) skewX(-20deg); }
+}
+
+/* Entrada del hero, en cascada */
+.hero__logo { animation: entra-logo 1s cubic-bezier(.2, .7, .2, 1) .05s both; }
+.hero__tagline { animation: entra .9s cubic-bezier(.2, .7, .2, 1) .3s both; }
+.hero__propuesta { animation: entra .9s cubic-bezier(.2, .7, .2, 1) .45s both; }
+.horario-chip { animation: entra .9s cubic-bezier(.2, .7, .2, 1) .6s both; }
+.estado { animation: entra .9s cubic-bezier(.2, .7, .2, 1) .7s both; }
+.hero__acciones { animation: entra .9s cubic-bezier(.2, .7, .2, 1) .8s both; }
+.carta-hero .wrap > * { animation: entra .9s cubic-bezier(.2, .7, .2, 1) both; }
+.carta-hero .wrap > :nth-child(2) { animation-delay: .15s; }
+.carta-hero .wrap > :nth-child(3) { animation-delay: .3s; }
+.carta-hero .wrap > :nth-child(4) { animation-delay: .45s; }
+
+/* Resplandor que respira detrás del logo */
+.hero::before,
+.carta-hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: min(720px, 130vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 154, 91, .26) 0%, rgba(201, 154, 91, 0) 64%);
+  transform: translate(-50%, -50%);
+  animation: respira 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+.carta-hero::before { top: 36%; }
+.sol-giratorio { animation-duration: 140s; }
+
+/* Botones de Rappi con pulso suave; los principales con destello */
+.btn { position: relative; overflow: hidden; }
+.btn[href*="rappi.sng.link"]:not(.nav__rappi) { animation: anillo-crema 2.8s ease-out infinite; }
+.btn--dorado[href*="rappi.sng.link"]:not(.nav__rappi) { animation-name: anillo-dorado; }
+.btn--crema::after,
+.btn--terracota::after,
+.btn--dorado::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 38%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .5), transparent);
+  transform: translateX(-130%) skewX(-20deg);
+  animation: brillo 5.5s ease-in-out 1.4s infinite;
+  pointer-events: none;
+}
+
+/* Aparición escalonada de cada plato de la carta */
+.js .item.reveal { transform: translateY(12px); transition-duration: .5s; }
+.js .item.reveal.is-in { transform: none; }
+.items .item:nth-child(even) { --d: .07s; }
+
+/* Pantallas táctiles: sin hover, así que el movimiento viene solo */
+@media (hover: none) {
+  .btn .ico-flecha,
+  .destacado svg,
+  .red svg { animation: vaiven 1.8s ease-in-out infinite; }
+  .destacado:active { transform: scale(.97); border-color: var(--terracota); }
+  .red:active { background: #fff8ec; border-color: var(--terracota); }
+  .cats__lista a:active { transform: scale(.94); }
+  .cats__lista a { transition: background-color .2s ease, color .2s ease, transform .15s ease; }
+  .destacado--oscuro { animation: respira-tarjeta 4.5s ease-in-out infinite; }
+}
+@keyframes respira-tarjeta {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 154, 91, 0); }
+  50% { box-shadow: 0 10px 28px -10px rgba(201, 154, 91, .55); }
+}
+@media (max-width: 719px) {
+  .cinta__pista { animation-duration: 48s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+}
+
+/* Mensaje cuando la carta no se puede leer */
+.carta-error { padding-block: 3rem; text-align: center; color: var(--texto-suave); }
+.carta-error p + p { margin-top: .6rem; }

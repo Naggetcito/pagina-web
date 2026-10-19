@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Carta de Auraki Roll | MISTIK</title>
+  <meta name="theme-color" content="#0B0B0B">
+  <style>
+    html, body { height: 100%; margin: 0; background: #0B0B0B; }
+    object { display: block; width: 100%; height: 100%; border: 0; }
+    .aviso { display: grid; place-content: center; justify-items: center; gap: 1rem; height: 100%; padding: 2rem; text-align: center; font-family: system-ui, "Segoe UI", sans-serif; color: #F7EEDF; }
+    .aviso h1 { margin: 0; font-size: 1.6rem; font-weight: 600; }
+    .aviso p { margin: 0; max-width: 24em; line-height: 1.6; opacity: .85; }
+    .aviso a { padding: .8rem 1.6rem; border-radius: 999px; background: #E01B24; color: #fff; font-weight: 700; text-decoration: none; }
+    .aviso small { opacity: .55; }
+  </style>
+</head>
+
+<!--
+=====================================================================
+  CARTA DE AURAKI ROLL
+  Esta pagina solo muestra un PDF. No tiene nada mas.
+=====================================================================
+  SI CAMBIAS LA CARTA:
+
+  FORMA FACIL (recomendada)
+    Guarda el PDF nuevo en ESTA MISMA CARPETA con el nombre
+        carta-auraki-roll.pdf
+    (reemplaza al anterior). No tienes que tocar nada de este archivo.
+
+  SI EL PDF NUEVO TIENE OTRO NOMBRE
+    Baja hasta la linea que dice "CAMBIAR AQUI" y escribe el nombre
+    del PDF nuevo entre las comillas. Es la UNICA linea que se edita.
+=====================================================================
+-->
+<body>
+  <object id="carta" type="application/pdf" aria-label="Carta de Auraki Roll">
+    <div class="aviso">
+      <h1>Carta de Auraki Roll</h1>
+      <p>Toca el botón para ver la carta completa.</p>
+      <a id="abrir" href="#">Abrir la carta</a>
+      <small>Si no se abre, avisa al restaurante: el archivo <span id="nombre"></span> no está en la carpeta.</small>
+    </div>
+  </object>
+
+  <script>
+    // >>>>>>>>>>  CAMBIAR AQUI: nombre del PDF, entre las comillas  <<<<<<<<<<
+    var PDF = "carta-auraki-roll.pdf";
+    // >>>>>>>>>>  (no hay nada mas que cambiar abajo de esta linea)  <<<<<<<<<<
+
+    document.getElementById("abrir").href = PDF;
+    document.getElementById("nombre").textContent = PDF;
+    // En computadora el PDF se ve dentro de la pagina; en celular se abre con el boton.
+    var celular = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+    if (!celular) document.getElementById("carta").data = PDF + "#view=FitH&navpanes=0";
+  </script>
+</body>
+</html>

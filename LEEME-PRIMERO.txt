@@ -1,0 +1,99 @@
+=====================================================================
+  LA PAGINA WEB DE MISTIK - GUIA PARA EDITARLA SIN SABER DE CODIGO
+=====================================================================
+
+PARA VER LA PAGINA
+  Haz doble clic en  index.html  y se abre en tu navegador.
+
+
+QUE HAY EN ESTA CARPETA
+---------------------------------------------------------------------
+  index.html ............ La pagina de inicio.
+  carta.html ............ La carta de MISTIK.
+  auraki.html ........... La carta de Auraki Roll (muestra el PDF).
+  carta-auraki-roll.pdf . El PDF de la carta de Auraki Roll.
+
+  EDITAR-AQUI/ .......... Lo UNICO que necesitas tocar.
+      ajustes.js ........ Enlaces, horario, direccion, textos,
+                          botones y orden de la pagina de inicio.
+      carta.js .......... Platos y precios de la carta de MISTIK.
+
+  NO-TOCAR/ ............. El diseño (colores, letras, imagenes,
+                          animaciones). Si algo de aqui se mueve,
+                          la pagina se puede descomponer.
+
+
+COMO ABRIR UN ARCHIVO PARA EDITARLO
+---------------------------------------------------------------------
+  Clic DERECHO sobre el archivo  >  Abrir con  >  Bloc de notas.
+  (No hagas doble clic en los archivos .js: no se abren para editar.)
+  Cuando termines: Archivo > Guardar. Luego actualiza la pagina
+  en el navegador con la tecla F5.
+
+  Dentro de los archivos hay instrucciones escritas arriba, con
+  ejemplos. Cambia solo el texto, no borres las comillas
+  invertidas ( ` ) ni el punto y coma ( ; ) del final.
+
+
+QUIERO CAMBIAR...                           ABRE ESTE ARCHIVO
+---------------------------------------------------------------------
+  Un precio, quitar o agregar un plato ..... EDITAR-AQUI/carta.js
+  El enlace de Rappi, Instagram o TikTok ... EDITAR-AQUI/ajustes.js
+  El horario o la direccion ................ EDITAR-AQUI/ajustes.js
+  La frase principal o los textos .......... EDITAR-AQUI/ajustes.js
+  Donde sale el boton de Rappi ............. EDITAR-AQUI/ajustes.js
+  El orden de las secciones del inicio ..... EDITAR-AQUI/ajustes.js
+  La carta de Auraki Roll .................. Ver el punto de abajo
+
+
+COMO CAMBIAR LA CARTA DE AURAKI ROLL
+---------------------------------------------------------------------
+  FORMA FACIL:
+    1. Consigue el PDF nuevo.
+    2. Ponle EXACTAMENTE este nombre:  carta-auraki-roll.pdf
+    3. Pegalo en esta carpeta y acepta reemplazar el anterior.
+    Listo. No hay que tocar nada mas.
+
+  Si el PDF nuevo tiene otro nombre y no quieres renombrarlo:
+    1. Abre  auraki.html  con el Bloc de notas.
+    2. Busca la linea que dice  CAMBIAR AQUI.
+    3. Cambia el nombre entre comillas por el del PDF nuevo.
+       Es la unica linea que se edita en ese archivo.
+
+  Si el PDF no esta en la carpeta o el nombre no coincide, la pagina
+  muestra un aviso con el nombre del archivo que no encuentra.
+
+
+EJEMPLOS RAPIDOS
+---------------------------------------------------------------------
+  Un plato dejo de venderse:
+     En carta.js, borra su linea o ponle # al inicio
+     (con # queda guardado pero oculto, para volver a activarlo luego).
+
+  Subio un precio:
+     En carta.js, cambia el numero:   Chuleta | 22 | Acompañado de...
+
+  Cambiar el enlace de Rappi:
+     En ajustes.js, pega el enlace nuevo despues de  rappi:
+     Se actualizan TODOS los botones de Rappi de la pagina.
+
+  "Mover" el boton de Rappi:
+     En ajustes.js, seccion 5, escribe  no  donde ya no lo quieres
+     y  si  donde si lo quieres (encabezado, portada, celular,
+     contacto, pie de pagina).
+
+  Cambiar el orden de las secciones del inicio:
+     En ajustes.js, seccion 6, cambia el orden de la lista.
+     Para ocultar una seccion, borra su nombre de la lista.
+
+
+SI ALGO SALE MAL
+---------------------------------------------------------------------
+  - Antes de editar, copia el archivo y guarda la copia en otro
+    lado (por ejemplo  carta - copia.js ). Si algo se rompe, vuelves
+    a poner la copia.
+  - Si la carta no aparece o sale un aviso rojo, casi siempre es una
+    comilla invertida ( ` ) borrada por accidente en carta.js.
+  - Si un boton no aparece, revisa que en ajustes.js no diga  no.
+  - Cualquier cosa de diseño (colores, tamaños, animaciones) la
+    maneja quien armo la pagina, no es parte de tu edicion.
