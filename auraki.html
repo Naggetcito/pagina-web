@@ -52,7 +52,16 @@
     document.getElementById("nombre").textContent = PDF;
     // En computadora el PDF se ve dentro de la pagina; en celular se abre con el boton.
     var celular = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
-    if (!celular) document.getElementById("carta").data = PDF + "#view=FitH&navpanes=0";
+    var visor = document.getElementById("carta");
+    if (celular) {
+      // Safari del iPhone no muestra el contenido de reserva de <object>: se saca el aviso y se quita el visor
+      var aviso = visor.querySelector(".aviso");
+      aviso.querySelector("small").remove(); // en celular no es un error, es el camino normal
+      document.body.appendChild(aviso);
+      visor.remove();
+    } else {
+      visor.data = PDF + "#view=FitH&navpanes=0";
+    }
   </script>
 </body>
 </html>
